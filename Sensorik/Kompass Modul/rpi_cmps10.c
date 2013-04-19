@@ -56,6 +56,13 @@ signed int getRoll() {
 
 int main(int argc, char **argv)
 {
+	printf("*** CMPS10 example ***\n");
+
+	//int fd;
+	//char *fileName = "/dev/i2c-1";
+	//int address = 0x60;
+	//unsigned char buf[5];
+
 	if ((fd = open(fileName, O_RDWR)) < 0) {
 		printf("Failed to open i2c port \n");
 		exit(1);
@@ -76,12 +83,17 @@ int main(int argc, char **argv)
 	if (read(fd, buf, 6) != 6) {
 		printf("Unable to read from slave\n");
 	} else {
-//		printf("Software v: %u \n", buf[0]);
-//		printf("Bearing as byte: %u \n", buf[1]);
+		printf("Software v: %u \n", buf[0]);
+		printf("Bearing as byte: %u \n", buf[1]);
 
-//		printf("Pitch: %i\n", getPitch());
-//		printf("Roll: %i\n", getRoll());
-//		printf("Bearing as decimal %.3f\n", getBearingAsDecimal());
+//		unsigned char highByte = buf[2];
+//		unsigned char lowByte = buf[3];
+//		unsigned int result = (highByte <<8) + lowByte;
+//		printf("Bearing as decimal: %u.%u\n", result / 10, result %10);
+
+		printf("Pitch: %i\n", getPitch());
+		printf("Roll: %i\n", getRoll());
+		printf("Bearing as decimal %.3f\n", getBearingAsDecimal());
 	}
 
 	return 0;
