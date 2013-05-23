@@ -1,4 +1,4 @@
-// CMPS10 example c code for RaspberryPi
+//CMPS10 example c code for RaspberryPi
 
 #include <stdio.h>
 #include <stdlib.h>
